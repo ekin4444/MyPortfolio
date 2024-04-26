@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,6 +22,12 @@
 
   <!-- Template Main CSS File -->
   <link href="static/css/style.css" rel="stylesheet">
+<!-- Include jQuery -->
+    <script src="static/admin/js/vendor/jquery/jquery.js"></script>
+    <script src="{% static 'js/contact.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
 
   <!-- =======================================================
   * Template Name: DevFolio
@@ -620,7 +627,8 @@
                       </h5>
                     </div>
                     <div>
-                      <form action="contact.php" method="post" role="form" class="php-email-form">
+                      <form action="/contact/contact_form/" method="post" role="form" class="php-email-form">
+                          {% csrf_token %}
                         <div class="row">
                           <div class="col-md-12 mb-3">
                             <div class="form-group">
@@ -727,6 +735,7 @@
 
   <!-- Template Main JS File -->
   <script src="static/js/main.js"></script>
+  <script src="static/js/contact.js"></script>
 
 </body>
 

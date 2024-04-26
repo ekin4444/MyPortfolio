@@ -1,14 +1,8 @@
-from django.shortcuts import render
-from .forms import ContactForm
+from django.http import JsonResponse
 
-def contact(request):
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            # Process the data in form.cleaned_data
-            # (e.g., send an email, save to database)
-            form.save()
-            return render(request, 'contact/success.html')
-    else:
-        form = ContactForm()
-    return render(request, 'contact/contact.html', {'form': form})
+
+def contact_form(request):
+    # Your form processing logic here
+    # Assuming the form was sent successfully
+    message = "Your custom success message here."
+    return JsonResponse({"message": message})
