@@ -1,8 +1,15 @@
 from django.http import JsonResponse
+from django.shortcuts import render
 
+
+# Create your views here.
 
 def contact_form(request):
-    # Your form processing logic here
-    # Assuming the form was sent successfully
-    message = "Your custom success message here."
-    return JsonResponse({"message": message})
+    context = {
+        'success': True,
+        'message': 'Contact form sent successfully.',
+    }
+    return JsonResponse(context)
+
+def contact(request):
+    return render(request, 'contact.html')
