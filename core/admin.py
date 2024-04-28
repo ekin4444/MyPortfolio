@@ -11,6 +11,7 @@ class GeneralSettingAdmin(admin.ModelAdmin):
     search_fields = ['name', 'description', 'parameter']
     list_editable = ['description', 'parameter']
 
+
     class Meta:
         model = GeneralSetting
 

@@ -49,6 +49,7 @@ class ImageSetting(models.Model):
         verbose_name="Name Test",
         help_text='This is the variable of the setting.'
     )
+
     description = models.CharField(
         default='',
         max_length=254,

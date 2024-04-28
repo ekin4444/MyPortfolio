@@ -56,3 +56,4 @@ def contact_form(request):
 
         return JsonResponse({'message': 'Your message has been sent. Thank you!'})
     return JsonResponse({'error': 'Invalid request'})
+
