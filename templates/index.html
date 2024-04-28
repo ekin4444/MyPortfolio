@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Ekin Filiz Ataş Portfolio</title>
+  <title>{{ site_title }}</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -93,8 +93,8 @@
       <div class="table-cell">
         <div class="container">
           <!--<p class="display-6 color-d">Hello, world!</p>-->
-          <h1 class="hero-title mb-4">I am Ekin Filiz Ataş</h1>
-          <p class="hero-subtitle"><span class="typed" data-typed-items="UX/UI Developer, Web Designer, Artist"></span></p>
+          <h1 class="hero-title mb-4">I am {{ site_title }}</h1>
+          <p class="hero-subtitle"><span class="typed" data-typed-items={{ site_keywords }}></span></p>
           <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
         </div>
       </div>
@@ -154,8 +154,7 @@
                       </h5>
                     </div>
                     <p class="lead">
-                      I am a person who is interested in technology, wants to improve herself in the field of software, games and design, gives importance to being original, creative, and wants to realize her dreams without getting away from reality
-                    </p>
+                        {{site_about}}                    </p>
                   </div>
                 </div>
               </div>

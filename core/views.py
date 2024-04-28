@@ -4,10 +4,19 @@ from django.http import JsonResponse
 from django.shortcuts import render
 from django.core.mail import send_mail
 from django.conf import settings
+from core.models import GeneralSetting
 
 
 def index(request):
-    return render(request, 'index.html')
+    site_title = GeneralSetting.objects.get(name='site_title').parameter
+    site_keywords = GeneralSetting.objects.get(name='site_keywords').parameter
+    site_about = GeneralSetting.objects.get(name='site_about').parameter
+    context = {
+        'site_title': site_title,
+        'site_keywords': site_keywords,
+        'site_about': site_about,
+    }
+    return render(request, 'index.html', context=context)
 
 
 def single(request):

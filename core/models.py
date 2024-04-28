@@ -38,4 +38,4 @@ class GeneralSetting(models.Model):
     class Meta:
         verbose_name = 'General Setting'
         verbose_name_plural = 'General Settings'
-        ordering = ('name', )
+        ordering = ('name',)
