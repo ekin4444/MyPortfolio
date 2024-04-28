@@ -80,7 +80,7 @@
           </li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
-          
+
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
@@ -129,14 +129,14 @@
                   </div>
                   <div class="skill-mf">
                     <p class="title-s">Skill</p>
-                      
+
                       {% for skill in skills %}
                           <span>{{ skill.name }}</span> <span class="pull-right">{{ skill.percentage }}</span>
                           <div class="progress">
                               <div class="progress-bar" role="progressbar" style="width: {{ skill.percentage }}%;" aria-valuenow="{{ skill.percentage }}" aria-valuemin="0" aria-valuemax="100"></div>
                           </div>
                       {% endfor %}
-                      
+
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -166,9 +166,6 @@
               <h3 class="title-a">
                 Experiences
               </h3>
-              <p class="subtitle-a">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              </p>
               <div class="line-mf"></div>
             </div>
           </div>
@@ -192,17 +189,6 @@
                   egestas non nisi.
                 </p>
               </div>
-              <div class="card-footer">
-                <div class="post-author">
-                  <a href="#">
-                    <img src="static/img/testimonial-2.jpg" alt="" class="avatar rounded-circle">
-                    <span class="author">Morgan Freeman</span>
-                  </a>
-                </div>
-                <div class="post-date">
-                  <span class="bi bi-clock"></span> 10 min
-                </div>
-              </div>
             </div>
           </div>
           <div class="col-md-4">
@@ -222,17 +208,6 @@
                   a pellentesque nec,
                   egestas non nisi.
                 </p>
-              </div>
-              <div class="card-footer">
-                <div class="post-author">
-                  <a href="#">
-                    <img src="static/img/testimonial-2.jpg" alt="" class="avatar rounded-circle">
-                    <span class="author">Morgan Freeman</span>
-                  </a>
-                </div>
-                <div class="post-date">
-                  <span class="bi bi-clock"></span> 10 min
-                </div>
               </div>
             </div>
           </div>
@@ -254,22 +229,79 @@
                   egestas non nisi.
                 </p>
               </div>
-              <div class="card-footer">
-                <div class="post-author">
-                  <a href="#">
-                    <img src="static/img/testimonial-2.jpg" alt="" class="avatar rounded-circle">
-                    <span class="author">Morgan Freeman</span>
-                  </a>
-                </div>
-                <div class="post-date">
-                  <span class="bi bi-clock"></span> 10 min
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </div>
     </section><!-- End Blog Section -->
+
+  <section id="blog" class="blog-mf sect-pt4 route">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="title-box text-center">
+              <h3 class="title-a">
+                Education
+              </h3>
+              <div class="line-mf"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card card-blog">
+              <div class="card-body">
+                <div class="card-category-box">
+                  <div class="card-category">
+                    <h6 class="category">Tekfen Holding</h6>
+                  </div>
+                </div>
+                <h3 class="card-title"><a href="single.html">UX/UI Developer</a></h3>
+                <p class="card-description">
+                  Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Praesent sapien massa, convallis
+                  a pellentesque nec,
+                  egestas non nisi.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-blog">
+              <div class="card-body">
+                <div class="card-category-box">
+                  <div class="card-category">
+                    <h6 class="category">ASELSAN</h6>
+                  </div>
+                </div>
+                <h3 class="card-title"><a href="single.html">Software Test Engineering</a></h3>
+                <p class="card-description">
+                  Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Praesent sapien massa, convallis
+                  a pellentesque nec,
+                  egestas non nisi.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-blog">
+              <div class="card-body">
+                <div class="card-category-box">
+                  <div class="card-category">
+                    <h6 class="category">Seomatik GMBH</h6>
+                  </div>
+                </div>
+                <h3 class="card-title"><a href="single.html">Web Designer</a></h3>
+                <p class="card-description">
+                  Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Praesent sapien massa, convallis
+                  a pellentesque nec,
+                  egestas non nisi.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services-mf pt-5 route">
