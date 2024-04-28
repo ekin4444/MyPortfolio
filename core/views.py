@@ -11,10 +11,13 @@ def index(request):
     site_title = GeneralSetting.objects.get(name='site_title').parameter
     site_keywords = GeneralSetting.objects.get(name='site_keywords').parameter
     site_about = GeneralSetting.objects.get(name='site_about').parameter
+    logo = GeneralSetting.objects.get(name='logo').parameter
+
     context = {
         'site_title': site_title,
         'site_keywords': site_keywords,
         'site_about': site_about,
+        'logo': logo,
     }
     return render(request, 'index.html', context=context)
 
