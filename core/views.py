@@ -4,7 +4,7 @@ from django.http import JsonResponse
 from django.shortcuts import render
 from django.core.mail import send_mail
 from django.conf import settings
-from core.models import GeneralSetting, ImageSetting
+from core.models import GeneralSetting, ImageSetting, Skill
 
 
 def index(request):
@@ -13,9 +13,12 @@ def index(request):
     site_about = GeneralSetting.objects.get(name='site_about').parameter
     logo = GeneralSetting.objects.get(name='logo').parameter
 
-    #images
+    # images
     testimonal = ImageSetting.objects.get(name='testimonal').file
     bg = ImageSetting.objects.get(name='bg').file
+
+    # skills
+    skills = Skill.objects.all().order_by('order')
 
     context = {
         'site_title': site_title,
@@ -24,6 +27,7 @@ def index(request):
         'logo': logo,
         'testimonal': testimonal,
         'bg': bg,
+        'skills': skills
     }
     return render(request, 'index.html', context=context)
 
@@ -56,4 +60,3 @@ def contact_form(request):
 
         return JsonResponse({'message': 'Your message has been sent. Thank you!'})
     return JsonResponse({'error': 'Invalid request'})
-
