@@ -4,7 +4,7 @@ from django.http import JsonResponse
 from django.shortcuts import render
 from django.core.mail import send_mail
 from django.conf import settings
-from core.models import GeneralSetting
+from core.models import GeneralSetting, ImageSetting
 
 
 def index(request):
@@ -13,11 +13,17 @@ def index(request):
     site_about = GeneralSetting.objects.get(name='site_about').parameter
     logo = GeneralSetting.objects.get(name='logo').parameter
 
+    #images
+    testimonal = ImageSetting.objects.get(name='testimonal').file
+    bg = ImageSetting.objects.get(name='bg').file
+
     context = {
         'site_title': site_title,
         'site_keywords': site_keywords,
         'site_about': site_about,
         'logo': logo,
+        'testimonal': testimonal,
+        'bg': bg,
     }
     return render(request, 'index.html', context=context)
 
