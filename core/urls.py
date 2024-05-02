@@ -8,6 +8,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('single.html', views.single, name='single'),
     path('details.html', views.details, name='details'),
-    path('contact_form/', views.contact_form, name='contact_form'),
+    path('contact.html', views.contact, name='contact'),
+    path('', views.contact, name='contact_form'),
     # Add other URL patterns for blog and portfolio if needed
 ]

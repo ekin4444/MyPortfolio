@@ -4,7 +4,7 @@ from django.http import JsonResponse
 from django.shortcuts import render
 from django.core.mail import send_mail
 from django.conf import settings
-from core.models import GeneralSetting, ImageSetting, Skill
+from core.models import GeneralSetting, ImageSetting, Skill, Experience
 
 
 def index(request):
@@ -20,6 +20,8 @@ def index(request):
     # skills
     skills = Skill.objects.all().order_by('order')
 
+    experience = Experience.objects.all()
+
     context = {
         'site_title': site_title,
         'site_keywords': site_keywords,
@@ -27,7 +29,8 @@ def index(request):
         'logo': logo,
         'testimonal': testimonal,
         'bg': bg,
-        'skills': skills
+        'skills': skills,
+        'experience': experience
     }
     return render(request, 'index.html', context=context)
 
@@ -42,21 +45,21 @@ def details(request):
     return render(request, 'details.html')
 
 
-def contact_form(request):
+def contact(request):
     if request.method == 'POST':
-        name = request.POST.get('name', '')
-        email = request.POST.get('email', '')
-        subject = request.POST.get('subject', '')
-        message = request.POST.get('message', '')
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
 
-        # Send email
         send_mail(
             subject,
             message,
             settings.EMAIL_HOST_USER,
-            [settings.EMAIL_HOST_USER],
+            [email],
             fail_silently=False,
         )
 
         return JsonResponse({'message': 'Your message has been sent. Thank you!'})
-    return JsonResponse({'error': 'Invalid request'})
+
+    return render(request, 'contact.html')
