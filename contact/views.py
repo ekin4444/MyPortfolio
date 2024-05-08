@@ -1,32 +1,32 @@
+from django.core.mail import send_mail
+from django.conf import settings
 from django.http import JsonResponse
 from django.shortcuts import render
-from .models import Message
+
+
+def index(request):
+    return render(request, 'index.html')
 
 
 def contact_form(request):
-    if request.method.POST:
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        subject = request.POST.get('subject')
-        message = request.POST.get('message')
+    print("hello from contact_from function")
+    if request.method == 'POST':
+        nameText = request.POST['name']
+        emailText = request.POST['email']
+        subjectText = request.POST['subject']
+        messageText = request.POST['message']
+        print("hello from contact_from if state")
 
-        Message.objects.create(
-            name=name,
-            email=email,
-            subject=subject,
-            message=message),
+        send_mail(
+            "Message From :" + subjectText,
+            f"Name: {nameText}\nEmail: {emailText}\n\n{messageText}",  # E-posta gövdesi
+            'your-email@example.com',  # Gönderen e-posta adresi
+            ['ekinfilizatass@gmail.com'],  # Alıcı e-posta adresi
+        )
 
-        success = True
-        message = 'Contact form sent successfully'
+        print("if worked")
+        return render(request, 'index.html', {"message_name": nameText})
     else:
-        success = False
-        message = 'Request method is not valid.'
-    context = {
-        'success': success,
-        'message': message,
-    }
-    return JsonResponse(context)
 
-
-def contact(request):
-    return render(request, 'contact.html')
+        print("else worked")
+        return render(request, 'index.html', {"message_name": "sa"})

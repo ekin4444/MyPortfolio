@@ -1,14 +1,12 @@
 # urls.py
 
 from django.urls import path
-from . import views
-
+from .views import index, contact, contact_form, single, details
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('single.html', views.single, name='single'),
-    path('details.html', views.details, name='details'),
-    path('contact.html', views.contact, name='contact'),
-    path('', views.contact, name='contact_form'),
+    path('', index, name='index'),
+    path('single.html', single, name='single'),
+    path('details.html', details, name='details'),
+    path('index.html', contact_form, name='contact_form'),
     # Add other URL patterns for blog and portfolio if needed
 ]

@@ -1,10 +1,12 @@
 # Create your views here.
 # views.py
 from django.http import JsonResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from django.conf import settings
-from core.models import GeneralSetting, ImageSetting, Skill, Experience
+
+from contact.models import Message
+from core.models import GeneralSetting, Skill, Experience
 
 
 def index(request):
@@ -12,10 +14,6 @@ def index(request):
     site_keywords = GeneralSetting.objects.get(name='site_keywords').parameter
     site_about = GeneralSetting.objects.get(name='site_about').parameter
     logo = GeneralSetting.objects.get(name='logo').parameter
-
-    # images
-    testimonal = ImageSetting.objects.get(name='testimonal').file
-    bg = ImageSetting.objects.get(name='bg').file
 
     # skills
     skills = Skill.objects.all().order_by('order')
@@ -27,8 +25,6 @@ def index(request):
         'site_keywords': site_keywords,
         'site_about': site_about,
         'logo': logo,
-        'testimonal': testimonal,
-        'bg': bg,
         'skills': skills,
         'experience': experience
     }
@@ -46,20 +42,28 @@ def details(request):
 
 
 def contact(request):
+    return render(request, 'index.html')
+
+
+def contact_form(request):
+    print("hello from contact_from function")
     if request.method == 'POST':
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        subject = request.POST.get('subject')
-        message = request.POST.get('message')
+        nameText = request.POST['name']
+        emailText = request.POST['email']
+        subjectText = request.POST['subject']
+        messageText = request.POST['message']
+        print("hello from contact_from if state")
 
         send_mail(
-            subject,
-            message,
-            settings.EMAIL_HOST_USER,
-            [email],
-            fail_silently=False,
+            "Message From :" + subjectText,
+            f"Name: {nameText}\nEmail: {emailText}\n\n{messageText}",  # E-posta gövdesi
+            'your-email@example.com',  # Gönderen e-posta adresi
+            ['ekinfilizatass@gmail.com'],  # Alıcı e-posta adresi
         )
 
-        return JsonResponse({'message': 'Your message has been sent. Thank you!'})
+        print("if worked")
+        return render(request, 'index.html', {"message_name": nameText})
+    else:
 
-    return render(request, 'contact.html')
+        print("else worked")
+        return render(request, 'index.html', {"message_name": "sa"})

@@ -23,6 +23,9 @@
     <orderEntry type="library" name="jquery.validate" level="application" />
     <orderEntry type="library" name="jquery-3.6.0" level="application" />
     <orderEntry type="library" name="additional-methods" level="application" />
+    <orderEntry type="library" name="jquery-3.6.0" level="application" />
+    <orderEntry type="library" name="additional-methods" level="application" />
+    <orderEntry type="library" name="jquery.validate" level="application" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />
