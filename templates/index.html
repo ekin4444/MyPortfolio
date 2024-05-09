@@ -164,9 +164,9 @@
                                 <a href="single.html"><img src="static/img/post-1.jpg" alt="" class="img-fluid"></a>
                             </div>
                             <div class="card-body">
-                                <div class="card-category-box">
-                                    <div class="card-category">
-                                        <h6 class="category">{{ experience.company_name }}</h6>
+                                <div class="card-category-box" style="height: 50px">
+                                    <div class="card-category" style="background-color: black">
+                                        <h6 class="category" style="font-size: 20px;">{{ experience.company_name }}</h6>
                                     </div>
                                 </div>
                                 <h3 class="card-title"><a href="single.html">{{ experience.job_title }}</a></h3>
@@ -197,11 +197,12 @@
                 </div>
             </div>
             <div class="row">
+            <div class="row justify-content-center">
                 {% for education in educations %}
                     <div class="col-md-4">
                         <div class="card card-blog">
-                            <div class="card-body">
-                                <div class="card-category-box">
+                            <div class="card-body" >
+                                <div class="card-category-box" style="height: 100px; padding: 20px; border-radius: 10px;">
                                 </div>
                                 <h3 class="card-title">{{ education.school_name }}</h3>
                                 <h4 class="card-title">{{ education.department }}</h4>
@@ -212,52 +213,43 @@
                         </div>
                     </div>
                 {% endfor %}
-
+            </div>
             </div>
         </div>
     </section>
 
     <!-- ======= Counter Section ======= -->
     <div id="languages" class="section-counter paralax-mf bg-image"
-         style="background-image: url(static/img/counters-bg.jpg)">
+         style="background-image: url(static/img/counters-bg.png)">
         <div class="overlay-mf"></div>
         <div class="container position-relative">
-            <div class="row">
-                <div class="col-sm-3 col-lg-3">
-                    <div class="counter-box counter-box pt-4 pt-md-0">
-                        <div class="counter-ico">
-                            <span class="ico-circle"><i class="bi bi-check"></i></span>
-                        </div>
-                        <div class="counter-num">
-                            <span class="counter-text">Upper Intermediate</span>
-                            <span class="counter-text">English</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3 col-lg-3">
-                    <div class="counter-box pt-4 pt-md-0">
-                        <div class="counter-ico">
-                            <span class="ico-circle"><i class="bi bi-journal-richtext"></i></span>
-                        </div>
-                        <div class="counter-num">
-                            <span class="counter-text">Native</span>
-                            <span class="counter-text">Turkish</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3 col-lg-3">
-                    <div class="counter-box pt-4 pt-md-0">
-                        <div class="counter-ico">
-                            <span class="ico-circle"><i class="bi bi-people"></i></span>
-                        </div>
-                        <span class="counter-text">Intermediate</span>
-                        <span class="counter-text">German</span>
+        <div class="row">
+                <div class="col-sm-12">
+                    <div class="title-box text-center">
+                        <h3 class="title-a">
+                            Languages
+                        </h3>
+                        <div class="line-mf"></div>
                     </div>
                 </div>
             </div>
+            <div class="row justify-content-center"> <!-- Center the row -->
+                {% for language in languages %}
+                <div class="col-sm-3 col-lg-3">
+                    <div class="counter-box counter-box pt-4 pt-md-0">
+                        <div class="counter-num text-white"
+                             style="height: 100px; background-color: rgba(192,226,255,0.5); padding: 20px; border-radius: 10px; font-size: 24px">
+                            <span class="counter-text">{{ language.language_name }} -</span>
+                            <span class="counter-text">{{ language.level }}</span>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
-    </div><!-- End Counter Section -->
+    <!-- End Counter Section -->
+
 
     <!-- ======= Portfolio Section ======= -->
     <section id="work" class="portfolio-mf sect-pt4 route">
@@ -573,7 +565,8 @@
                                     <div class="socials">
                                         <ul class="list">
                                             {% for social in social_medias %}
-                                                <li><a href="{{ social.link }}" target="_blank"><span{{ social.icon|safe }}></span></a> </li>
+                                                <li><a href="{{ social.link }}"
+                                                       target="_blank"><span{{ social.icon|safe }}></span></a></li>
                                             {% endfor %}
                                         </ul>
                                     </div>

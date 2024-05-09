@@ -138,7 +138,7 @@ class Education(AbstractModel):
     )
 
     def __str__(self):
-        return f'Experience: {self.school_name}'
+        return f'Education: {self.school_name}'
 
     class Meta:
         verbose_name = 'Education'
@@ -166,9 +166,37 @@ class SocialMedia(AbstractModel):
     )
 
     def __str__(self):
-        return f'Experience: {self.link}'
+        return f'Social Media: {self.link}'
 
     class Meta:
         verbose_name = 'Social Media'
         verbose_name_plural = 'Social Media'
         ordering = ('order',)
+
+
+class Language(AbstractModel):
+    order = models.IntegerField(
+        default=0,
+        verbose_name="Order",
+    )
+    language_name = models.CharField(
+        default='',
+        max_length=254,
+        blank=True,
+        verbose_name="Language",
+    )
+    level = models.CharField(
+        default='',
+        max_length=254,
+        blank=True,
+        verbose_name="Level",
+    )
+
+    def __str__(self):
+        return f'Language: {self.language_name}'
+
+    class Meta:
+        verbose_name = 'Language'
+        verbose_name_plural = 'Language'
+        ordering = ('order',)
+        # eksi koyduk ve order by ın tersine olmasını sağladık

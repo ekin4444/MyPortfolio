@@ -6,7 +6,7 @@ from django.core.mail import send_mail
 from django.conf import settings
 
 from contact.models import Message
-from core.models import GeneralSetting, Skill, Experience, Education, SocialMedia
+from core.models import GeneralSetting, Skill, Experience, Education, SocialMedia, Language
 
 
 def index(request):
@@ -21,6 +21,7 @@ def index(request):
     experiences = Experience.objects.all()
     educations = Education.objects.all()
     social_medias = SocialMedia.objects.all()
+    languages = Language.objects.all()
 
     context = {
         'site_title': site_title,
@@ -30,7 +31,8 @@ def index(request):
         'skills': skills,
         'experiences': experiences,
         'educations': educations,
-        'social_medias': social_medias
+        'social_medias': social_medias,
+        'languages': languages
     }
     return render(request, 'index.html', context=context)
 

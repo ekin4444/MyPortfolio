@@ -54,3 +54,13 @@ class SocialMediaAdmin(admin.ModelAdmin):
 
     class Meta:
         model = SocialMedia
+
+
+@admin.register(Language)
+class LanguageAdmin(admin.ModelAdmin):
+    list_display = ['id', 'order', 'language_name', 'level', 'updated_date', 'created_date']
+    search_fields = ['language_name', 'level', ]
+    list_editable = ['order', 'language_name', 'level', ]
+
+    class Meta:
+        model = Language
