@@ -18,7 +18,7 @@ def index(request):
     # skills
     skills = Skill.objects.all().order_by('order')
 
-    experience = Experience.objects.all()
+    experiences = Experience.objects.all()
 
     context = {
         'site_title': site_title,
@@ -26,7 +26,7 @@ def index(request):
         'site_about': site_about,
         'logo': logo,
         'skills': skills,
-        'experience': experience
+        'experiences': experiences,
     }
     return render(request, 'index.html', context=context)
 
