@@ -74,3 +74,13 @@ class ReferenceAdmin(admin.ModelAdmin):
 
     class Meta:
         model = Reference
+
+
+@admin.register(Project)
+class ProjectAdmin(admin.ModelAdmin):
+    list_display = ['id', 'order', 'project_name', 'updated_date', 'created_date']
+    search_fields = ['project_name', ]
+    list_editable = ['order', 'project_name', ]
+
+    class Meta:
+        model = Project

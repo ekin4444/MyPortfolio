@@ -235,3 +235,24 @@ class Reference(AbstractModel):
         verbose_name = 'Reference'
         verbose_name_plural = 'Reference'
         ordering = ('ref_name',)
+
+
+class Project(AbstractModel):
+    order = models.IntegerField(
+        default=0,
+        verbose_name="Order",
+    )
+    project_name = models.CharField(
+        default='',
+        max_length=254,
+        blank=True,
+        verbose_name="Project Name",
+    )
+
+    def __str__(self):
+        return f'Project: {self.project_name}'
+
+    class Meta:
+        verbose_name = 'Project'
+        verbose_name_plural = 'Project'
+        ordering = ('project_name',)

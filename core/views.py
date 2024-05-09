@@ -6,7 +6,7 @@ from django.core.mail import send_mail
 from django.conf import settings
 
 from contact.models import Message
-from core.models import GeneralSetting, Skill, Experience, Education, SocialMedia, Language, Reference
+from core.models import GeneralSetting, Skill, Experience, Education, SocialMedia, Language, Reference, Project
 
 
 def index(request):
@@ -23,6 +23,7 @@ def index(request):
     social_medias = SocialMedia.objects.all()
     languages = Language.objects.all()
     references = Reference.objects.all()
+    projects = Project.objects.all()
 
     context = {
         'site_title': site_title,
@@ -34,19 +35,44 @@ def index(request):
         'educations': educations,
         'social_medias': social_medias,
         'languages': languages,
-        'references': references
+        'references': references,
+        'projects': projects
     }
     return render(request, 'index.html', context=context)
 
 
-def single(request):
+def neuro_details(request):
+    site_title = GeneralSetting.objects.get(name='site_title').parameter
+    logo = GeneralSetting.objects.get(name='logo').parameter
+
+    context = {
+        'site_title': site_title,
+        'logo': logo,
+    }
     # Your view logic here
-    return render(request, 'single.html')
+    return render(request, 'neuro_details.html', context=context)
 
 
-def details(request):
-    # Your view logic here
-    return render(request, 'details.html')
+def eco_details(request):
+    site_title = GeneralSetting.objects.get(name='site_title').parameter
+    logo = GeneralSetting.objects.get(name='logo').parameter
+
+    context = {
+        'site_title': site_title,
+        'logo': logo,
+    }
+    return render(request, 'eco_details.html', context=context)
+
+
+def seat_details(request):
+    site_title = GeneralSetting.objects.get(name='site_title').parameter
+    logo = GeneralSetting.objects.get(name='logo').parameter
+
+    context = {
+        'site_title': site_title,
+        'logo': logo,
+    }
+    return render(request, 'seat_details.html', context=context)
 
 
 def contact(request):

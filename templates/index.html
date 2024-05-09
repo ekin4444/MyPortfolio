@@ -161,7 +161,7 @@
                     <div class="col-md-4">
                         <div class="card card-blog">
                             <div class="card-img">
-                                <a href="single.html"><img src="static/img/post-1.jpg" alt="" class="img-fluid"></a>
+                                <img src="static/img/post-1.jpg" alt="" class="img-fluid"></a>
                             </div>
                             <div class="card-body">
                                 <div class="card-category-box" style="height: 50px">
@@ -169,7 +169,7 @@
                                         <h6 class="category" style="font-size: 20px;">{{ experience.company_name }}</h6>
                                     </div>
                                 </div>
-                                <h3 class="card-title"><a href="single.html">{{ experience.job_title }}</a></h3>
+                                <h3 class="card-title">{{ experience.job_title }}</h3>
                                 <p class="card-description">
                                     {{ experience.job_location }}
                                 </p>
@@ -197,18 +197,18 @@
             <div class="row justify-content-center">
                 {% for education in educations %}
                     <div class="col-md-4">
-                        <div class="card card-blog education-card">
-                            <div class="card-body">
-                                <h3 class="card-title">{{ education.school_name }}</h3>
-                                <h4 class="card-title">{{ education.department }}</h4>
-                                <p class="card-description">{{ education.start_date }}</p>
-                            </div>
+                        <div class="card-blog"
+                             style="background-color: #f8f9fa; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
+                            <h2>{{ education.school_name }}</h2>
+                            <h4>{{ education.department }}</h4>
+                            <p class="card-description">{{ education.start_date }}</p>
                         </div>
                     </div>
                 {% endfor %}
             </div>
         </div>
     </section>
+    <br>
 
 
     <!-- ======= Counter Section ======= -->
@@ -244,7 +244,7 @@
     <!-- End Counter Section -->
 
 
-    <!-- ======= Portfolio Section ======= -->
+    <!-- ======= Projects Section ======= -->
     <section id="work" class="portfolio-mf sect-pt4 route">
         <div class="container">
             <div class="row">
@@ -253,9 +253,6 @@
                         <h3 class="title-a">
                             Projects
                         </h3>
-                        <p class="subtitle-a">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                        </p>
                         <div class="line-mf"></div>
                     </div>
                 </div>
@@ -263,23 +260,19 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="work-box">
-                        <a href="static/img/work-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                        <a href="static/img/work-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
                             <div class="work-img">
-                                <img src="static/img/work-1.jpg" alt="" class="img-fluid">
+                                <img src="static/img/work-2.jpg" alt="" class="img-fluid">
                             </div>
                         </a>
                         <div class="work-content">
                             <div class="row">
                                 <div class="col-sm-8">
-                                    <h2 class="w-title">Lorem impsum dolor</h2>
-                                    <div class="w-more">
-                                        <span class="w-ctegory">Web Design</span> / <span
-                                            class="w-date">18 Sep. 2018</span>
-                                    </div>
+                                    <h1 class="w-title">NEUROSPY</h1>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="w-like">
-                                        <a href="details.html"> <span class="bi bi-plus-circle"></span></a>
+                                        <a href="neuro_details.html"> <span class="bi bi-arrow-right"></span></a>
                                     </div>
                                 </div>
                             </div>
@@ -296,15 +289,11 @@
                         <div class="work-content">
                             <div class="row">
                                 <div class="col-sm-8">
-                                    <h2 class="w-title">Loreda Cuno Nere</h2>
-                                    <div class="w-more">
-                                        <span class="w-ctegory">Web Design</span> / <span
-                                            class="w-date">18 Sep. 2018</span>
-                                    </div>
+                                    <h1 class="w-title">ECO WATCH</h1>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="w-like">
-                                        <a href="details.html"> <span class="bi bi-plus-circle"></span></a>
+                                        <a href="eco_details.html"> <span class="bi bi-arrow-right"></span></a>
                                     </div>
                                 </div>
                             </div>
@@ -321,90 +310,11 @@
                         <div class="work-content">
                             <div class="row">
                                 <div class="col-sm-8">
-                                    <h2 class="w-title">Mavrito Lana Dere</h2>
-                                    <div class="w-more">
-                                        <span class="w-ctegory">Web Design</span> / <span
-                                            class="w-date">18 Sep. 2018</span>
-                                    </div>
+                                    <h1 class="w-title">SEAT RESERVATION</h1>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="w-like">
-                                        <a href="details.html"> <span class="bi bi-plus-circle"></span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="work-box">
-                        <a href="static/img/work-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                            <div class="work-img">
-                                <img src="static/img/work-4.jpg" alt="" class="img-fluid">
-                            </div>
-                        </a>
-                        <div class="work-content">
-                            <div class="row">
-                                <div class="col-sm-8">
-                                    <h2 class="w-title">Bindo Laro Cado</h2>
-                                    <div class="w-more">
-                                        <span class="w-ctegory">Web Design</span> / <span
-                                            class="w-date">18 Sep. 2018</span>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="w-like">
-                                        <a href="details.html"> <span class="bi bi-plus-circle"></span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="work-box">
-                        <a href="static/img/work-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                            <div class="work-img">
-                                <img src="static/img/work-5.jpg" alt="" class="img-fluid">
-                            </div>
-                        </a>
-                        <div class="work-content">
-                            <div class="row">
-                                <div class="col-sm-8">
-                                    <h2 class="w-title">Studio Lena Mado</h2>
-                                    <div class="w-more">
-                                        <span class="w-ctegory">Web Design</span> / <span
-                                            class="w-date">18 Sep. 2018</span>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="w-like">
-                                        <a href="details.html"> <span class="bi bi-plus-circle"></span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="work-box">
-                        <a href="static/img/work-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                            <div class="work-img">
-                                <img src="static/img/work-6.jpg" alt="" class="img-fluid">
-                            </div>
-                        </a>
-                        <div class="work-content">
-                            <div class="row">
-                                <div class="col-sm-8">
-                                    <h2 class="w-title">Studio Big Bang</h2>
-                                    <div class="w-more">
-                                        <span class="w-ctegory">Web Design</span> / <span
-                                            class="w-date">18 Sep. 2017</span>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="w-like">
-                                        <a href="details.html"> <span class="bi bi-plus-circle"></span></a>
+                                        <a href="seat_details.html"> <span class="bi bi-arrow-right"></span></a>
                                     </div>
                                 </div>
                             </div>
@@ -431,22 +341,22 @@
             </div>
             <div class="row">
                 {% for reference in references %}
-                <div class="col-md-4">
-                    <div class="service-box">
-                        <div class="service-content">
-                            <h2 class="s-title">{{ reference.ref_name }}</h2>
-                            <p class="s-description text-center">
-                                {{ reference.ref_company}}
-                            </p>
-                            <p class="s-description text-center">
-                                {{ reference.ref_job }}
-                            </p>
-                            <p class="s-description text-center">
-                                +{{ reference.ref_number }}
-                            </p>
+                    <div class="col-md-4">
+                        <div class="service-box">
+                            <div class="service-content">
+                                <h2 class="s-title">{{ reference.ref_name }}</h2>
+                                <p class="s-description text-center">
+                                    {{ reference.ref_company }}
+                                </p>
+                                <p class="s-description text-center">
+                                    {{ reference.ref_job }}
+                                </p>
+                                <p class="s-description text-center">
+                                    +{{ reference.ref_number }}
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
                 {% endfor %}
             </div>
         </div>
