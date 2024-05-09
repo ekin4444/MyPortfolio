@@ -200,3 +200,38 @@ class Language(AbstractModel):
         verbose_name_plural = 'Language'
         ordering = ('order',)
         # eksi koyduk ve order by ın tersine olmasını sağladık
+
+
+class Reference(AbstractModel):
+    ref_name = models.CharField(
+        default='',
+        max_length=254,
+        blank=True,
+        verbose_name="Reference Name",
+        help_text='This is the variable of the setting.'
+    )
+    ref_company = models.CharField(
+        default='',
+        max_length=254,
+        blank=True,
+        verbose_name="Reference Company"
+    )
+    ref_job = models.CharField(
+        default='',
+        max_length=254,
+        blank=True,
+        verbose_name="Reference Job"
+    )
+    ref_number = models.IntegerField(
+        default='',
+        verbose_name="Reference Number",
+        blank=True
+    )
+
+    def __str__(self):
+        return f'Reference: {self.ref_name}'
+
+    class Meta:
+        verbose_name = 'Reference'
+        verbose_name_plural = 'Reference'
+        ordering = ('ref_name',)

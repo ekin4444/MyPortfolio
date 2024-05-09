@@ -189,41 +189,34 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="title-box text-center">
-                        <h3 class="title-a">
-                            Education
-                        </h3>
+                        <h3 class="title-a">Education</h3>
                         <div class="line-mf"></div>
                     </div>
                 </div>
             </div>
-            <div class="row">
             <div class="row justify-content-center">
                 {% for education in educations %}
                     <div class="col-md-4">
-                        <div class="card card-blog">
-                            <div class="card-body" >
-                                <div class="card-category-box" style="height: 100px; padding: 20px; border-radius: 10px;">
-                                </div>
+                        <div class="card card-blog education-card">
+                            <div class="card-body">
                                 <h3 class="card-title">{{ education.school_name }}</h3>
                                 <h4 class="card-title">{{ education.department }}</h4>
-                                <p class="card-description">
-                                    {{ education.start_date }}
-                                </p>
+                                <p class="card-description">{{ education.start_date }}</p>
                             </div>
                         </div>
                     </div>
                 {% endfor %}
             </div>
-            </div>
         </div>
     </section>
+
 
     <!-- ======= Counter Section ======= -->
     <div id="languages" class="section-counter paralax-mf bg-image"
          style="background-image: url(static/img/counters-bg.png)">
         <div class="overlay-mf"></div>
         <div class="container position-relative">
-        <div class="row">
+            <div class="row">
                 <div class="col-sm-12">
                     <div class="title-box text-center">
                         <h3 class="title-a">
@@ -235,15 +228,15 @@
             </div>
             <div class="row justify-content-center"> <!-- Center the row -->
                 {% for language in languages %}
-                <div class="col-sm-3 col-lg-3">
-                    <div class="counter-box counter-box pt-4 pt-md-0">
-                        <div class="counter-num text-white"
-                             style="height: 100px; background-color: rgba(192,226,255,0.5); padding: 20px; border-radius: 10px; font-size: 24px">
-                            <span class="counter-text">{{ language.language_name }} -</span>
-                            <span class="counter-text">{{ language.level }}</span>
+                    <div class="col-sm-3 col-lg-3">
+                        <div class="counter-box counter-box pt-4 pt-md-0">
+                            <div class="counter-num text-white"
+                                 style="height: 100px; background-color: rgba(192,226,255,0.5); padding: 20px; border-radius: 10px; font-size: 24px">
+                                <span class="counter-text">{{ language.language_name }} -</span>
+                                <span class="counter-text">{{ language.level }}</span>
+                            </div>
                         </div>
                     </div>
-                </div>
                 {% endfor %}
             </div>
         </div>
@@ -432,44 +425,29 @@
                         <h3 class="title-a">
                             References
                         </h3>
-                        <p class="subtitle-a">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                        </p>
                         <div class="line-mf"></div>
                     </div>
                 </div>
             </div>
             <div class="row">
+                {% for reference in references %}
                 <div class="col-md-4">
                     <div class="service-box">
                         <div class="service-content">
-                            <h2 class="s-title">English</h2>
+                            <h2 class="s-title">{{ reference.ref_name }}</h2>
                             <p class="s-description text-center">
-                                Second Language Proficiency
+                                {{ reference.ref_company}}
+                            </p>
+                            <p class="s-description text-center">
+                                {{ reference.ref_job }}
+                            </p>
+                            <p class="s-description text-center">
+                                +{{ reference.ref_number }}
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="service-box">
-                        <div class="service-content">
-                            <h2 class="s-title">Turkish</h2>
-                            <p class="s-description text-center">
-                                Native
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-box">
-                        <div class="service-content">
-                            <h2 class="s-title">German</h2>
-                            <p class="s-description text-center">
-                                Intermediate
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section><!-- End References Section -->

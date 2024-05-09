@@ -64,3 +64,13 @@ class LanguageAdmin(admin.ModelAdmin):
 
     class Meta:
         model = Language
+
+
+@admin.register(Reference)
+class ReferenceAdmin(admin.ModelAdmin):
+    list_display = ['id', 'ref_name', 'ref_company', 'ref_job', 'ref_number', 'updated_date', 'created_date']
+    search_fields = ['ref_name', 'ref_company', 'ref_job', 'ref_number', ]
+    list_editable = ['ref_name', 'ref_company', 'ref_job', 'ref_number', ]
+
+    class Meta:
+        model = Reference
