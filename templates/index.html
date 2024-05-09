@@ -52,25 +52,11 @@
                 <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
                 <li><a class="nav-link scrollto" href="#about">About</a></li>
                 <li><a class="nav-link scrollto " href="#blog">Experiences</a></li>
-                <li><a class="nav-link scrollto" href="#services">Languages</a></li>
-                <li><a class="nav-link scrollto " href="#work">Work</a></li>
-                <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-                    <ul>
-                        <li><a href="#">Drop Down 1</a></li>
-                        <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                            <ul>
-                                <li><a href="#">Deep Drop Down 1</a></li>
-                                <li><a href="#">Deep Drop Down 2</a></li>
-                                <li><a href="#">Deep Drop Down 3</a></li>
-                                <li><a href="#">Deep Drop Down 4</a></li>
-                                <li><a href="#">Deep Drop Down 5</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Drop Down 2</a></li>
-                        <li><a href="#">Drop Down 3</a></li>
-                        <li><a href="#">Drop Down 4</a></li>
-                    </ul>
-                </li>
+                <li><a class="nav-link scrollto " href="#education">Education</a></li>
+
+                <li><a class="nav-link scrollto" href="#languages">Languages</a></li>
+                <li><a class="nav-link scrollto " href="#work">Projects</a></li>
+                <li><a class="nav-link scrollto " href="#references">References</a></li>
                 <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
             </ul>
 
@@ -198,7 +184,7 @@
         </div>
     </section><!-- End Blog Section -->
 
-    <section id="blog" class="blog-mf sect-pt4 route">
+    <section id="education" class="blog-mf sect-pt4 route">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
@@ -212,87 +198,28 @@
             </div>
             <div class="row">
                 {% for education in educations %}
-                <div class="col-md-4">
-                    <div class="card card-blog">
-                        <div class="card-body">
-                            <div class="card-category-box">
+                    <div class="col-md-4">
+                        <div class="card card-blog">
+                            <div class="card-body">
+                                <div class="card-category-box">
+                                </div>
+                                <h3 class="card-title">{{ education.school_name }}</h3>
+                                <h4 class="card-title">{{ education.department }}</h4>
+                                <p class="card-description">
+                                    {{ education.start_date }}
+                                </p>
                             </div>
-                            <h3 class="card-title">{{ education.school_name}}</h3>
-                            <h4 class="card-title">{{ education.department}}</h4>
-                            <p class="card-description">
-                                {{ education.start_date }}
-                            </p>
                         </div>
                     </div>
-                </div>
                 {% endfor %}
 
             </div>
         </div>
     </section>
 
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services-mf pt-5 route">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="title-box text-center">
-                        <h3 class="title-a">
-                            Languages
-                        </h3>
-                        <p class="subtitle-a">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                        </p>
-                        <div class="line-mf"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="service-box">
-                        <div class="service-ico">
-                            <span class="ico-circle"><i class="bi bi-briefcase"></i></span>
-                        </div>
-                        <div class="service-content">
-                            <h2 class="s-title">English</h2>
-                            <p class="s-description text-center">
-                                Second Language Proficiency
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-box">
-                        <div class="service-ico">
-                            <span class="ico-circle"><i class="bi bi-card-checklist"></i></span>
-                        </div>
-                        <div class="service-content">
-                            <h2 class="s-title">Turkish</h2>
-                            <p class="s-description text-center">
-                                Native
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-box">
-                        <div class="service-ico">
-                            <span class="ico-circle"><i class="bi bi-bar-chart"></i></span>
-                        </div>
-                        <div class="service-content">
-                            <h2 class="s-title">German</h2>
-                            <p class="s-description text-center">
-                                Intermediate
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section><!-- End Services Section -->
-
     <!-- ======= Counter Section ======= -->
-    <div class="section-counter paralax-mf bg-image" style="background-image: url(static/img/counters-bg.jpg)">
+    <div id="languages" class="section-counter paralax-mf bg-image"
+         style="background-image: url(static/img/counters-bg.jpg)">
         <div class="overlay-mf"></div>
         <div class="container position-relative">
             <div class="row">
@@ -302,9 +229,8 @@
                             <span class="ico-circle"><i class="bi bi-check"></i></span>
                         </div>
                         <div class="counter-num">
-                            <p data-purecounter-start="0" data-purecounter-end="450" data-purecounter-duration="1"
-                               class="counter purecounter"></p>
-                            <span class="counter-text">WORKS COMPLETED</span>
+                            <span class="counter-text">Upper Intermediate</span>
+                            <span class="counter-text">English</span>
                         </div>
                     </div>
                 </div>
@@ -314,9 +240,8 @@
                             <span class="ico-circle"><i class="bi bi-journal-richtext"></i></span>
                         </div>
                         <div class="counter-num">
-                            <p data-purecounter-start="0" data-purecounter-end="25" data-purecounter-duration="1"
-                               class="counter purecounter"></p>
-                            <span class="counter-text">YEARS OF EXPERIENCE</span>
+                            <span class="counter-text">Native</span>
+                            <span class="counter-text">Turkish</span>
                         </div>
                     </div>
                 </div>
@@ -325,27 +250,13 @@
                         <div class="counter-ico">
                             <span class="ico-circle"><i class="bi bi-people"></i></span>
                         </div>
-                        <div class="counter-num">
-                            <p data-purecounter-start="0" data-purecounter-end="550" data-purecounter-duration="1"
-                               class="counter purecounter"></p>
-                            <span class="counter-text">TOTAL CLIENTS</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3 col-lg-3">
-                    <div class="counter-box pt-4 pt-md-0">
-                        <div class="counter-ico">
-                            <span class="ico-circle"><i class="bi bi-award"></i></span>
-                        </div>
-                        <div class="counter-num">
-                            <p data-purecounter-start="0" data-purecounter-end="48" data-purecounter-duration="1"
-                               class="counter purecounter"></p>
-                            <span class="counter-text">AWARD WON</span>
-                        </div>
+                        <span class="counter-text">Intermediate</span>
+                        <span class="counter-text">German</span>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div><!-- End Counter Section -->
 
     <!-- ======= Portfolio Section ======= -->
@@ -355,7 +266,7 @@
                 <div class="col-sm-12">
                     <div class="title-box text-center">
                         <h3 class="title-a">
-                            Portfolio
+                            Projects
                         </h3>
                         <p class="subtitle-a">
                             Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -520,6 +431,57 @@
         </div>
     </section><!-- End Portfolio Section -->
 
+    <!-- ======= References Section ======= -->
+    <section id="references" class="services-mf pt-5 route">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="title-box text-center">
+                        <h3 class="title-a">
+                            References
+                        </h3>
+                        <p class="subtitle-a">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                        </p>
+                        <div class="line-mf"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="service-box">
+                        <div class="service-content">
+                            <h2 class="s-title">English</h2>
+                            <p class="s-description text-center">
+                                Second Language Proficiency
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-box">
+                        <div class="service-content">
+                            <h2 class="s-title">Turkish</h2>
+                            <p class="s-description text-center">
+                                Native
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-box">
+                        <div class="service-content">
+                            <h2 class="s-title">German</h2>
+                            <p class="s-description text-center">
+                                Intermediate
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- End References Section -->
+
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="paralax-mf footer-paralax bg-image sect-mt4 route"
              style="background-image: url(static/img/overlay-bg.jpg)">
@@ -609,15 +571,10 @@
                                         </ul>
                                     </div>
                                     <div class="socials">
-                                        <ul>
-                                            <li><a href=""><span class="ico-circle"><i
-                                                    class="bi bi-facebook"></i></span></a></li>
-                                            <li><a href=""><span class="ico-circle"><i
-                                                    class="bi bi-instagram"></i></span></a></li>
-                                            <li><a href=""><span class="ico-circle"><i class="bi bi-twitter"></i></span></a>
-                                            </li>
-                                            <li><a href=""><span class="ico-circle"><i
-                                                    class="bi bi-linkedin"></i></span></a></li>
+                                        <ul class="list">
+                                            {% for social in social_medias %}
+                                                <li><a href="{{ social.link }}" target="_blank"><span{{ social.icon|safe }}></span></a> </li>
+                                            {% endfor %}
                                         </ul>
                                     </div>
                                 </div>

@@ -114,7 +114,6 @@ class Experience(AbstractModel):
         # eksi koyduk ve order by ın tersine olmasını sağladık
 
 
-
 class Education(AbstractModel):
     school_name = models.CharField(
         default='',
@@ -146,3 +145,30 @@ class Education(AbstractModel):
         verbose_name_plural = 'Education'
         ordering = ('-start_date',)
         # eksi koyduk ve order by ın tersine olmasını sağladık
+
+
+class SocialMedia(AbstractModel):
+    order = models.IntegerField(
+        default=0,
+        verbose_name="Order",
+    )
+    link = models.URLField(
+        blank=True,
+        default='',
+        max_length=254,
+        verbose_name="Link",
+    )
+    icon = models.CharField(
+        blank=True,
+        default='',
+        max_length=254,
+        verbose_name="Icon",
+    )
+
+    def __str__(self):
+        return f'Experience: {self.link}'
+
+    class Meta:
+        verbose_name = 'Social Media'
+        verbose_name_plural = 'Social Media'
+        ordering = ('order',)
