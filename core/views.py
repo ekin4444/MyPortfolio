@@ -16,7 +16,8 @@ def index(request):
     logo = GeneralSetting.objects.get(name='logo').parameter
 
     # skills
-    skills = Skill.objects.all().order_by('order')
+    skills = Skill.objects.all().order_by('-percentage')
+    # -percentage yazarak websitesindeki sırayı yüzdeye göre değiştirdik
 
     experiences = Experience.objects.all()
     educations = Education.objects.all()
