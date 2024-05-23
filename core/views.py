@@ -1,9 +1,10 @@
 # Create your views here.
 # views.py
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from django.conf import settings
+from django.urls import reverse
 
 from contact.models import Message
 from core.models import GeneralSetting, Skill, Experience, Education, SocialMedia, Language, Reference, Project
@@ -96,9 +97,9 @@ def contact_form(request):
             ['ekinfilizatass@gmail.com'],  # Alıcı e-posta adresi
         )
 
-        print("if worked")
-        return render(request, 'index.html', {"message_name": nameText})
+        print("Form succesfully submitted")
+        return HttpResponseRedirect(reverse('index'))
     else:
 
-        print("else worked")
-        return render(request, 'index.html', {"message_name": "sa"})
+        print("Form not submitted")
+        return render(request, 'index.html', {"message_name": "hata"})
